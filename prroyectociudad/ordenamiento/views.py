@@ -46,3 +46,17 @@ def crear_parroquia(request):
     diccionario = {'formulario': formulario}
 
     return render(request, 'crearParroquia.html', diccionario)
+
+def crear_barrio_en_parroquia(request, id):
+    parroquia = Parroquia.objects.get(pk=id)
+    if request.method == 'POST':
+        formulario = BarrioForm(request.POST)
+        if formulario.is_valid():
+            nuevo_barrio = formulario.save(commit=False)
+            nuevo_barrio.parroquia = parroquia
+            nuevo_barrio.save()
+            return redirect(index)
+    else:
+        formulario = BarrioForm()
+    diccionario = {'formulario': formulario, 'parroquia': parroquia}
+    return render(request, 'crearBarrio.html', diccionario)
