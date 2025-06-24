@@ -38,7 +38,7 @@ Tareas:
 - Ingresar datos a las entidades. (listo) 
 - Personalizar el template del admin de Django (listo) 
 - Generar una vista que liste las parroquias y sus barrios (listo)
-- Generar una vista que liste los barrios
+- Generar una vista que liste los barrios ()
 - Generar un formulario que cree una parroquia
 - Generar un formulario que cree un barrio
 

@@ -5,6 +5,7 @@ from django.shortcuts import render
 
 # importar las clases de models.py
 from ordenamiento.models import *
+from ordenamiento.forms import *
 
 # Create your views here.
 
@@ -21,15 +22,24 @@ def obtener_barrios(request, id):
         Listar los registros del modelo Barrios,
         obtenidos de la base de datos.
     """
-    barrio = Barrio.objects.get(pk=id) # get: obtener un registro
+    barrios = Barrio.objects.all()
 
-    informacion_template = {'barrio': barrio}
-    return render(request, 'obtener_barrio.html', informacion_template)
+	informacion_template = {'barrios': barrios}
+	return render(request, 'barrios.html', informacion_template)
 
 
-def busca(request, cadena):
+def crear_parroquia(request):
     """
     """
-    estudiantes = Estudiante.objects.filter(nombre=cadena).all()
-    informacion_template = {'estudiantes': estudiantes, 'numero_estudiantes': len(estudiantes)}
-    return render(request, 'busca.html', informacion_template)
+    print(request)
+    if request.method=='POST':
+        formulario = ParroquiaForm(request.POST)
+        print(formulario.errors)
+        if formulario.is_valid():
+            formulario.save()
+            return redirect(index)
+    else:
+        formulario = ParroquiaForm()
+    diccionario = {'formulario': formulario}
+
+    return render(request, 'crearParroquia.html', diccionario)
