@@ -159,7 +159,7 @@ JAZZMIN_SETTINGS = {
 
 # Personalización visual avanzada:
 JAZZMIN_UI_TWEAKS = {
-    "theme": "flaty", # tema claro y fresh
+    "theme": "flatly", # tema claro y fresh
     "accent": "accent-pink",
 
     "compact_sidebar": True,
