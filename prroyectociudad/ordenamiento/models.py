@@ -20,7 +20,7 @@ class Barrio(models.Model):
 	numero_viviendas = models.IntegerField()
 	numero_parques = models.IntegerField()
 	numero_edfre = models.IntegerField()
-	parroquia = models.ForeignKey(Parroquia, on_delete=models.CASCADE)
+	parroquia = models.ForeignKey(Parroquia, on_delete=models.CASCADE, related_name="lista_barrios")
 
 	def __str__(self):
 		return "%s %d %d %d %s" % (self.nombre,
