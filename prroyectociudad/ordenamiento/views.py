@@ -11,12 +11,16 @@ from ordenamiento.forms import *
 
 def index(request):
 	parroquias = Parroquia.objects.all()
-	barrios = Barrio.objects.all()
+	# barrios = Barrio.objects.all()
 
-	informacion_template = {'parroquias': parroquias, 'barrios': barrios}
+	informacion_template = {'parroquias': parroquias}
 	return render(request, 'index.html', informacion_template)
 
-
+def obtener_parroquia(request, id):
+    parroquia = Parroquia.objects.get(pk=id)
+    informacion_template = {'parroquia': parroquia}
+    return render(request, 'obtener_parroquia.html', informacion_template)
+	
 def obtener_barrios(request, id):
     """
         Listar los registros del modelo Barrios,
@@ -26,7 +30,6 @@ def obtener_barrios(request, id):
 
 	informacion_template = {'barrios': barrios}
 	return render(request, 'barrios.html', informacion_template)
-
 
 def crear_parroquia(request):
     """
