@@ -31,13 +31,12 @@ Tecnologías y herramientas:
 
 Tareas:
 
-- Crear un proyecto de Django llamado prroyectociudad.
-- Crear una aplicación en el proyecto en Django llamada ordenamiento.
-- Generar el modelo de la aplicación usando las entidades descritas.
-- Activar la interfaz de administración de la aplicación de Django, agregar las
-    entidades creadas en la aplicación
-- Ingresar datos a las entidades.
-- Personalizar el template del admin de Django
+- Crear un proyecto de Django llamado prroyectociudad. (listo)
+- Crear una aplicación en el proyecto en Django llamada ordenamiento. (listo)
+- Generar el modelo de la aplicación usando las entidades descritas. (listo)
+- Activar la interfaz de administración de la aplicación de Django, agregar las entidades creadas en la aplicación (listo)
+- Ingresar datos a las entidades. (listo) 
+- Personalizar el template del admin de Django (listo) 
 - Generar una vista que liste las parroquias y sus barrios
 - Generar una vista que liste los barrios
 - Generar un formulario que cree una parroquia

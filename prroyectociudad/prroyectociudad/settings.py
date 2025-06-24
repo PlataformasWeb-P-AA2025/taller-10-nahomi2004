@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -116,8 +117,67 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = 'static/'
+STATICFILES_DIRS = [ BASE_DIR / "static"]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Probanding Jazzmin
+
+JAZZMIN_SETTINGS = {
+    "site_title": "Taller 10 Admin",
+    "site_brand": "Nahomi UwU",
+    "site_logo": "img/user_avatar.jpg", 
+    "login_logo": "img/login_logo.jpeg",
+
+    "welcome_sign": "Bienvenida, guapísima 🎀",
+    "copyright": "Nahomi ❤️",
+    
+    "topmenu_links": [
+        {"name": "Inicio", "url": "admin:index", "permissions": ["auth.view_user"]},
+        {"name": "GitHub", "url": "https://github.com/nahomi2004/Jazzmin-Django", "new_window": True},
+    ],
+
+    "usermenu_links": [
+        {"name": "Mi Perfil", "url": "/admin/auth/user/", "icon": "fas fa-user-circle"},
+    ],
+
+    "icons": {
+        "ordenamiento.parroquia": "fas fa-city",
+        "ordenamiento.barrio": "fas fa-building",
+    },
+
+    "show_sidebar": True,
+    "navigation_expanded": True,
+    "order_with_respect_to": ["ordenamiento", "ordenamiento.parroquia", "ordenamiento.barrio"],
+
+    "related_modal_active": True,
+    "changeform_format": "horizontal_tabs",
+}
+
+# Personalización visual avanzada:
+JAZZMIN_UI_TWEAKS = {
+    "theme": "flaty", # tema claro y fresh
+    "accent": "accent-pink",
+
+    "compact_sidebar": True,
+    "navigation_fixed": True,
+
+    "sidebar_light": True,
+
+    "navbar_small_text": False,
+    "footer_small_text": True,
+    "body_small_text": False,
+    "brand_small_text": False,
+
+    "navbar": "navbar-dark navbar-pink",
+    "sidebar_nav_flat_style": True,
+
+    "brand_colour": "navbar-pink",
+
+    "no_navbar_border": True,
+    "sidebar_nav_flat_style": True,
+    "sidebar_nav_legacy_style": False,
+}
