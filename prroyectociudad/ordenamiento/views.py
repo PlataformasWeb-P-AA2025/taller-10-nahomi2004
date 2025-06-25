@@ -21,15 +21,14 @@ def obtener_parroquia(request, id):
     informacion_template = {'parroquia': parroquia}
     return render(request, 'obtener_parroquia.html', informacion_template)
 	
-def obtener_barrios(request, id):
+def obtener_barrios(request):
     """
         Listar los registros del modelo Barrios,
         obtenidos de la base de datos.
     """
     barrios = Barrio.objects.all()
-
-	informacion_template = {'barrios': barrios}
-	return render(request, 'barrios.html', informacion_template)
+    informacion_template = {'barrios': barrios}
+    return render(request, 'obtener_barrios.html', informacion_template)
 
 def crear_parroquia(request):
     """
