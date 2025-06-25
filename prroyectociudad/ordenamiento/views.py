@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import RequestContext
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 # importar las clases de models.py
 from ordenamiento.models import *
